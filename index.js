@@ -15,7 +15,7 @@ bot.on('inline_query', (query) => {
 			{
 				id: uuid(),
 				type: 'article',
-				thumb_url: 'https://emojipedia-us.s3.amazonaws.com/cache/b4/eb/b4eb456f7224126deac748555e86bebd.png',
+				thumb_url: 'https://raw.githubusercontent.com/indri-indri/emoj-telegram/master/thumb.png',
 				title,
 				input_message_content: {
 					message_text: title,
