@@ -2,7 +2,7 @@
   "name": "emoj-telegram",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/indri-indri/emoj-telegram",
+  "repository": "https://github.com/rutger/emoj-telegram",
   "author": "Rutger Schimmel",
   "license": "ISC",
   "devDependencies": {
