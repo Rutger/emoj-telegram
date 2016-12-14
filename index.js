@@ -24,11 +24,8 @@ bot.on('inline_query', (query) => {
 		];
 
 		bot.answerInlineQuery(query.id, results)
-		.then((res) => {
-			console.log('something good happened', res);
-		})
 		.catch((err) => {
-			console.log('something bad happened', err);
+			console.log('Something failed:', err);
 		});
 	});
 });
