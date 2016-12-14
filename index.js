@@ -25,7 +25,7 @@ bot.on('inline_query', (query) => {
 
 		bot.answerInlineQuery(query.id, results)
 		.catch((err) => {
-			console.log('Something failed:', err);
+			console.log(`Something failed (sender: ${query.from.username})`, err);
 		});
 	});
 });
