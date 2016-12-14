@@ -1,3 +1,5 @@
+require('./server');
+
 const TelegramBot = require('node-telegram-bot-api');
 const uuid = require('uuid');
 const emoj = require('emoj');
