@@ -29,7 +29,7 @@ bot.on('inline_query', (query) => {
 			{
 				id: uuid(),
 				type: 'article',
-				thumb_url: 'https://raw.githubusercontent.com/indri-indri/emoj-telegram/master/thumb.png',
+				thumb_url: 'https://raw.githubusercontent.com/rutger/emoj-telegram/master/thumb.png',
 				title,
 				input_message_content: {
 					message_text: title,
