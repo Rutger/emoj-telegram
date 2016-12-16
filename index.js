@@ -3,6 +3,7 @@ require('./server');
 const TelegramBot = require('node-telegram-bot-api');
 const uuid = require('uuid');
 const emoj = require('emoj');
+const addCount = require('./usage');
 require('dotenv').config();
 
 const token = process.env.EMOJ_TOKEN;
@@ -22,6 +23,7 @@ bot.on('inline_query', (query) => {
 		});
 		return;
 	}
+	addCount();
 
 	emoj(query.query).then((res) => {
 		const title = formatEmoji(res);
