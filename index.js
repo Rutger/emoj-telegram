@@ -15,6 +15,14 @@ function formatEmoji(res) {
 }
 
 bot.on('inline_query', (query) => {
+	if (!query.query) {
+		bot.answerInlineQuery(query.id, [])
+		.catch((err) => {
+			console.log(`Something failed (sender: ${query.from.username})`, err);
+		});
+		return;
+	}
+
 	emoj(query.query).then((res) => {
 		const title = formatEmoji(res);
 		const results = [
