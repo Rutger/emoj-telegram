@@ -6,7 +6,7 @@ Internally it uses [**Dango**](https://getdango.com/), an "emoji assistant" whic
 
 To use it in [Telegram](https://telegram.me/emojrobot), start typing `@emojrobot` and a theme. For example `@emojrobot i like unicorns`.
 
-TODO: fancy gif
+TODO: Fancy gif
 
 ## Related
 
