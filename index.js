@@ -10,9 +10,13 @@ const bot = new TelegramBot(token, {
 	polling: true,
 });
 
+function formatEmoji(res) {
+	return res.slice(0, 5).join('');
+}
+
 bot.on('inline_query', (query) => {
 	emoj(query.query).then((res) => {
-		const title = res.slice(0, 5).join('');
+		const title = formatEmoji(res);
 		const results = [
 			{
 				id: uuid(),
@@ -29,5 +33,22 @@ bot.on('inline_query', (query) => {
 		.catch((err) => {
 			console.log(`Something failed (sender: ${query.from.username})`, err);
 		});
+	});
+});
+
+bot.on('message', (message) => {
+	const text = message.text;
+	const chatId = message.chat.id;
+
+	if (text.startsWith('/')) {
+		const helpText = 'Simply send some text to use this bot! You can also use this service in other conversations by typing `@emojrobot harry potter` for example.';
+		bot.sendMessage(chatId, helpText, {
+			parse_mode: 'Markdown',
+		});
+		return;
+	}
+
+	emoj(text).then((res) => {
+		bot.sendMessage(chatId, formatEmoji(res));
 	});
 });
